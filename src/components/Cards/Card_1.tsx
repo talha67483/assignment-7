@@ -1,8 +1,5 @@
-// import React from "react";
-// import Image from "next/image";
 import { Poppins } from "next/font/google";
 import { Inter } from "next/font/google";
-// import { CiStar } from "react-icons/ci";
 import { Roboto } from "next/font/google";
 
 const poppins = Poppins({
@@ -17,70 +14,6 @@ const inter = Inter({
   subsets: ["latin"],
   weight: ["100", "300", "400", "500", "600", "700"],
 });
-
-// interface Store {
-//   id?: string;
-//   title: string;
-//   price: number;
-//   description: string;
-//   category: string;
-//   image: string;
-//   rating?: {
-//     rate?: number;
-//     count?: number;
-//   };
-// }
-
-// const Card_1 = ({
-//   title,
-//   price,
-//   description,
-//   category,
-//   image,
-//   rating,
-// }: Store) => {
-//   return (
-//     <div className=" w-[360px] rounded-lg h-[490px]  bg-white ">
-//       <div className=" mx-[95px]  ">
-//         <Image src={image} alt="Image" width={150} height={10} />
-//       </div>
-//   <div className=" mt-30 mx-2 space-y-3 ">
-//         <h1
-//           className={` ${roboto.className} text-[17px] opacity-[60%] mt-5  font-semibold  `}
-//         >
-//           {category}
-//         </h1>
-//         <h1
-//           className={` ${inter.className} font-bold text-[18px] leading-[22px] `}
-//         >
-//           {title}
-//         </h1>
-//         <p
-//           className={` ${poppins.className}  text-[14px] opacity-[50%] leading-[19px] `}
-//         >
-//           {description}
-//         </p>
-//         <h2 className=" text-[18px] font-semibold "> ${price}</h2>
-//         <div className=" flex  justify-between items-center text-[#2a272e] font-semibold ">
-//           <div className="  flex items-center text- ">
-//             <span className="  ">
-//               <CiStar className=" text-yellow-400 text-3xl font-bold   " />{" "}
-//             </span>
-//             <span> {rating?.rate}</span>
-//             <span className=" mx-2 ">({rating?.count} reviews ) </span>
-//           </div>
-//   <button
-//     className={`hover:bg-[#2f57cf] bg-[#3366FF] text-white w-28 h-10 rounded-lg  duration-200 hover:duration-200  hover:text-[17px] font-medium ${poppins.className}    `}
-//   >
-//     Add to cart
-//   </button>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Card_1;
 
 import React, { useState } from "react";
 import Image from "next/image";
@@ -112,15 +45,15 @@ const Card_1: React.FC<CardProps> = ({
   };
 
   return (
-    <div className="border rounded-lg shadow-2xl p-4 w-80   sm:mx-9 bg-white my-10  ">
+    <div className="border rounded-lg shadow-xl p-4 w-80    sm:mx-10 bg-white    my-5  ">
       <Image
         src={image}
         alt={title}
-        width={300}
-        height={200}
-        className="object-cover  rounded-lg"
+        width={210}
+        height={190}
+        className="object-cover mx-9   rounded-lg"
       />
-      <hr className=" text-3xl mt-10 " />
+      <hr className="  mt-4 " />
       <h2
         className={` ${poppins.className} leading-[23px] text-lg font-bold mt-2`}
       >

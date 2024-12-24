@@ -1,66 +1,42 @@
-"use client";
-import { useEffect, useState } from "react";
-import Card_1 from "@/components/Cards/Card_1";
+import React from "react";
+import Link from "next/link";
+import { Poppins } from "next/font/google";
+import { Inter } from "next/font/google";
 
-interface Store {
-  id?: string;
-  title: string;
-  price: number;
-  description: string;
-  category: string;
-  image: string;
-  rating: {
-    rate?: number;
-    count?: number;
-  };
-}
+const myPopins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+const myInter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 const Page = () => {
-  const [data, setData] = useState<Store[]>([]);
-  const [loading, setLoading] = useState<boolean>(false);
-  useEffect(() => {
-    const fetchFunc = async () => {
-      setLoading(true);
-      try {
-        const responce = await fetch("https://fakestoreapi.com/products");
-        const parseReasponce: Store[] = await responce.json();
-        setData(parseReasponce);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchFunc();
-  }, []);
-
   return (
-    <>
-      <div className=" flex  flex-wrap  justify-center my-8  ">
-        {loading && (
-          <div className=" mx-auto mt-60 ">
-            <p className=" text-2xl font-semibold opacity-[80%]  ">
-              Loading...
-            </p>
-          </div>
-        )}
-        <div></div>
-        {data.map((val, idx) => (
-          <div className="  mt-10 " key={idx}>
-            <div className=" ">
-              <Card_1
-                image={val.image}
-                price={val.price}
-                title={val.title}
-                description={val.description}
-                category={val.category}
-                rating={val.rating}
-              />
-            </div>
-          </div>
-        ))}
+    <div className=" flex justify-center flex-col items-center h-screen ">
+      <h1
+        className={` ${myInter.className}  text-3xl font-semibold my-10 border-b-2 border-black    `}
+      >
+        Fetching API
+      </h1>
+      <div className=" w-80 h-40 border-[1px] border-gray-300 rounded-lg bg-white ">
+        <div
+          className={` ${myPopins.className} space-x-5 flex justify-center items-center h-full `}
+        >
+          <Link href={"/client-side"}>
+            <button className=" w-32 bg-black  text-white py-3 rounded-lg font-medium text-lg hover:bg-[#212121]">
+              Client Side
+            </button>
+          </Link>
+          <Link href={"/server-side"}>
+            <button className=" w-32 bg-black text-white py-3 rounded-lg font-medium text-lg hover:bg-[#212121]">
+              Server side
+            </button>
+          </Link>
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 

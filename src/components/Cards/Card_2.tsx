@@ -15,7 +15,7 @@ interface Books {
 const Card_2 = ({ id, name, type, available }: Books) => {
   return (
     <div
-      className={` ${roboto.className} bg-white w-72 sm:w-80  my-10 min-h-32 rounded-md  space-y-4 mx-4 px-4 border-[1px] border-green-500 `}
+      className={` ${roboto.className} bg-white w-72 sm:w-80  my-5 sm:my-10 min-h-32 rounded-md  space-y-4 mx-6 px-4 border-[1px] border-green-500 `}
     >
       <h1 className=" text-lg text-yellow-600 "> Name : {name} </h1>
       <h2 className=" text-lg text-red-500 "> Type : {type} </h2>
