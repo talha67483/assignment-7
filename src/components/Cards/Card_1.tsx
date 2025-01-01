@@ -55,12 +55,12 @@ const Card_1: React.FC<CardProps> = ({
       />
       <hr className="  mt-4 " />
       <h2
-        className={` ${poppins.className} leading-[23px] text-lg font-bold mt-2`}
+        className={` ${poppins.className} text-[#272343]  leading-[23px] text-lg font-bold mt-2`}
       >
         {title}
       </h2>
       <p
-        className={` ${inter.className}  text-gray-700 opacity-[90%] text-sm my-2`}
+        className={` ${inter.className}    text-gray-800 opacity-[90%] text-sm my-2`}
       >
         {category}
       </p>

@@ -16,7 +16,7 @@ const Page = () => {
   return (
     <div className=" flex justify-center flex-col items-center h-screen ">
       <h1
-        className={` ${myInter.className}  text-3xl font-semibold my-10 border-b-2 border-black    `}
+        className={` ${myInter.className} text-black  text-3xl font-semibold my-10 border-b-2 border-black    `}
       >
         Fetching API
       </h1>
